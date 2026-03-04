@@ -42,7 +42,7 @@ const Dashboard = () => {
     try {
       const token = localStorage.getItem("token");
 
-      const res = await fetch("http://localhost:5000/api/medicines", {
+      const res = await fetch("https://medtrack-mqas.onrender.com/api/medicines", {
         headers: { Authorization: `Bearer ${token}` },
       });
 
@@ -89,7 +89,7 @@ const Dashboard = () => {
     try {
       if (editingId) {
         await fetch(
-          `http://localhost:5000/api/medicines/${editingId}`,
+          `https://medtrack-mqas.onrender.com/api/medicines/${editingId}`,
           {
             method: "PUT",
             headers: {
@@ -101,7 +101,7 @@ const Dashboard = () => {
         );
         setEditingId(null);
       } else {
-        await fetch("http://localhost:5000/api/medicines", {
+        await fetch("https://medtrack-mqas.onrender.com/medicines", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -157,7 +157,7 @@ const Dashboard = () => {
   const handleDelete = async (id) => {
     const token = localStorage.getItem("token");
 
-    await fetch(`http://localhost:5000/api/medicines/${id}`, {
+    await fetch(`https://medtrack-mqas.onrender.com/api/medicines/${id}`, {
       method: "DELETE",
       headers: { Authorization: `Bearer ${token}` },
     });
@@ -173,7 +173,7 @@ const Dashboard = () => {
     const token = localStorage.getItem("token");
 
     await fetch(
-      `http://localhost:5000/api/medicines/toggle/${id}`,
+      `https://medtrack-mqas.onrender.com/api/medicines/toggle/${id}`,
       {
         method: "PUT",
         headers: { Authorization: `Bearer ${token}` },
