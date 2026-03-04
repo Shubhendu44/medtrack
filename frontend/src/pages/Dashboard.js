@@ -101,7 +101,7 @@ const Dashboard = () => {
         );
         setEditingId(null);
       } else {
-        await fetch("https://medtrack-mqas.onrender.com/medicines", {
+        await fetch("https://medtrack-mqas.onrender.com/api/medicines", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
